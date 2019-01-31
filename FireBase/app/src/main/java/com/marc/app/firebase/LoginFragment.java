@@ -82,7 +82,10 @@ public class LoginFragment extends Fragment {
         super.onAttach(context);
         if (context instanceof LogInListener) {
             mListener = (LogInListener) context;
-        }
+        } else {
+        throw new RuntimeException(context.toString()
+                + " must implement LogInListener");
+    }
     }
 
     @Override

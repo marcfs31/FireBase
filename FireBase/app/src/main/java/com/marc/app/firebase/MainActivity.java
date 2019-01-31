@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.Log
         FirebaseDatabase.getInstance().getReference().child("users").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                //Cuando se añade un usuari lo añade a una lista
+                //Cuando se añade un usuario lo añade a una lista
                 User user  = dataSnapshot.getValue(User.class);
                 Log.i("FIREBASE USERS", user.getEmail()+":"+user.getPassword());
                 userList.add(user);
