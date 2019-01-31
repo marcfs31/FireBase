@@ -80,7 +80,15 @@ public class LoginFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mListener = (LogInListener) context;
+        if (context instanceof LogInListener) {
+            mListener = (LogInListener) context;
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
     }
 
     // Interfaz de los metodos a usar
