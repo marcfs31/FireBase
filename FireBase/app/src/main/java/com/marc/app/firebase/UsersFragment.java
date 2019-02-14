@@ -156,4 +156,12 @@ public class UsersFragment extends Fragment {
             return usersListAdapter.size();
         }
     }
+
+    public interface OnUserFragmentListener {
+        void getFireBaseUsers();
+    }
+
+    public void addUserToList(User user) {
+
+    }
 }
